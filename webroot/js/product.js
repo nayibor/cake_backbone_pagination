@@ -17,7 +17,6 @@ init:function(){
 // are the same as the ones here
 	 var ProductModel = Backbone.Model.extend({
 	 defaults: {
-   defaults: {
      id:null,
 	 product_name: null,
 	 user_id:null,
@@ -30,7 +29,6 @@ init:function(){
 	 cost:0,
 	 quant_sale:0,
 	 new_stock:0
-     }
 	 }
 	 });
 	
@@ -39,6 +37,7 @@ init:function(){
 //this is to enable a backbone collection have access to attributes which by default is not possible
 //meta attributes can be used for  atttributes for a  collection such as pagination data 
 	 var MetaCollection = Backbone.Collection.extend({
+		 
      parse: function(data) {
 	 },
      meta: function(prop, value) {
@@ -54,6 +53,7 @@ init:function(){
 //this extends the meta collection object 
 //parse function is added so that data can be parsed into a form which can be understood by backbone	
 	 var ProductsCollection = MetaCollection.extend({
+	 
 	 _meta:[],
      url: $("#product_list_url").val(),
      model: ProductModel,
@@ -73,6 +73,7 @@ init:function(){
 //pagination is the current page 
 //url is url where data will be retrieved for the product model
 	 var PageModel = Backbone.Model.extend({
+	 
 	 defaults: {
      query :null,
 	 pagination: null,
@@ -122,7 +123,7 @@ init:function(){
 
 //view for rendering the whole product list object containted from the  db 
 //as well as the pagination row also  
- var ProductListView = Backbone.View.extend({
+	 var ProductListView = Backbone.View.extend({
 	 el: '.tableWrapper',
 
 
@@ -146,7 +147,7 @@ init:function(){
      },
      
 //for rendering the whole page including looping to 
-      render: function(event) {
+     render: function(event) {
 	 _this_list=this;
 	 
 //product list is emptied to make room for new list 
@@ -219,6 +220,6 @@ init:function(){
 
 $(document).ready(function(){
 
-	product.init();
+	 product.init();
 
 });
