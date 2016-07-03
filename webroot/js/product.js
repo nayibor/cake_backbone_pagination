@@ -62,7 +62,6 @@ init:function(){
 	 },
      parse: function(data) {
 	 this.meta('pagination',(data.pagination) ? data.pagination : {});
-	 this.meta('products',(data.products) ? data.products : {});
      return data.products;
      }
 	 });

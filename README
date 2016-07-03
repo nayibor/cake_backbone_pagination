@@ -1,0 +1,8 @@
+# README #
+
+
+### What is this repository for? ###
+
+* This repository is for a demonstration of using backbone.js and underscore templates to create pagination on the client side.
+  gettihg data can be done using any server side framework(cakephp,laravel,phoenix,zend) but cakephp was used as server side example
+  
